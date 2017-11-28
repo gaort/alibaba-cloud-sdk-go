@@ -8,6 +8,7 @@ go:
   - 1.9.x
 
 install:
+  - go get -u github.com/Masterminds/glide
   - glide install
 
 notifications:
@@ -18,8 +19,6 @@ notifications:
 script:
   - go build ./sdk
   - go build ./services/...
-  - go test -v ./sdk
-  - go test -v ./services/...
   - go vet ./sdk
   - go vet ./services/...
 
